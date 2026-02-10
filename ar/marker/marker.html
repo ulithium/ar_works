@@ -12,16 +12,16 @@
   <a-scene
     embedded
     vr-mode-ui="enabled: false"
-    arjs="sourceType: webcam; debugUIEnabled: false;">
+    arjs="sourceType: webcam; debugUIEnabled: true;">
 
     <!-- マーカー -->
-    <a-marker type="pattern" url="pattern.patt">
+    <a-marker preset="hiro">
       <a-video
         src="#video"
         width="1"
         height="0.56"
         position="0 0 0"
-        rotation="-90 0 0">
+        rotation="0 0 0">
       </a-video>
     </a-marker>
 
@@ -52,7 +52,6 @@
       });
     });
   </script>
-
 
 </body>
 </html>
