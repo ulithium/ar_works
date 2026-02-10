@@ -39,13 +39,20 @@
   </video>
 
   <script>
-  document.addEventListener('click', () => {
-    const v = document.querySelector('#video');
-    if (v && v.paused) {
-      v.play();
-    }
-  });
-</script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const marker = document.querySelector('a-marker');
+      const video = document.querySelector('#video');
+
+      marker.addEventListener('markerFound', () => {
+        video.play();
+      });
+
+      marker.addEventListener('markerLost', () => {
+        video.pause();
+      });
+    });
+  </script>
+
 
 </body>
 </html>
