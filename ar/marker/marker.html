@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
   <meta charset="utf-8">
-  <title>Illustration AR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
@@ -12,30 +11,13 @@
   <a-scene
     embedded
     vr-mode-ui="enabled: false"
-    arjs="sourceType: webcam; debugUIEnabled: false;">
+    arjs="sourceType: webcam; debugUIEnabled: true;">
 
-    <!-- マーカー -->
-    <a-marker type="pattern" url="pattern.patt">
-      <a-video
-        src="#video"
-        width="1"
-        height="0.56"
-        position="0 0 0"
-        rotation="-90 0 0">
-      </a-video>
+    <a-marker preset="hiro">
+      <a-box position="0 0.5 0" material="color: red;"></a-box>
     </a-marker>
 
     <a-entity camera></a-entity>
   </a-scene>
-
-  <video
-    id="video"
-    src="43.mp4"
-    preload="auto"
-    loop
-    muted
-    playsinline
-    webkit-playsinline>
-  </video>
 </body>
 </html>
